@@ -1,3 +1,4 @@
+#!/bin/env python3
 import pyowm
 import sys
 import os
@@ -5,8 +6,7 @@ import os
 # Env variables
 location = os.environ.get('OWM_CITY', 'Trnava')
 try:
-  #apiKey = os.environ.get('OWM_API_KEY', '410949e79c084c1ae243676a2614325f')
-  apiKey = os.environ('OWM_API_KEY')
+  apiKey = os.environ['OWM_API_KEY']
 except:
     print('OWM_API_KEY not set! The variable needs to be defined to proceed.')
     sys.exit(1)
