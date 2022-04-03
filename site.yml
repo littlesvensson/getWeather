@@ -19,9 +19,10 @@
     - name: Update apt and install docker-ce
       apt: update_cache=yes name=docker-ce state=latest
     
-    - name: Create container for docker configuration
-      file: /etc/docker
-      state: directory
+    - name: Create directory for docker configuration
+      file:
+        path: /etc/docker
+        state: directory
 
     - name: Enable container logging to Docker syslog file
       copy:
