@@ -39,7 +39,7 @@ $ docker build --rm -t "getweather:dev" .
 
 Run docker image:
 ```
-$ docker run --name weatherreporting --env OWM_API_KEY="410949e79c084c1ae243676a2614325f" --env OWM_CITY="Bratislava" getweather:dev
+$ docker run --rm --name weatherreporting --env OWM_API_KEY="410949e79c084c1ae243676a2614325f" --env OWM_CITY="Bratislava" getweather:dev
 ```
 Without exporting the OWM_CITY variable, you will get weather for lovely city of Trnava :) A valid OWM_API_KEY is mandatory.
 
