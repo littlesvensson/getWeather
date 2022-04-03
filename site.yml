@@ -3,6 +3,9 @@
   become: true
 
   tasks:
+    - name: Install GPG
+      apt: update_cache=yes name=gpg state=latest
+
     - name: Add Docker GPG apt Key
       apt_key:
         url: https://download.docker.com/linux/ubuntu/gpg
@@ -15,6 +18,11 @@
 
     - name: Update apt and install docker-ce
       apt: update_cache=yes name=docker-ce state=latest
+    
+    - name: Create directory for docker configuration
+      file:
+        path: /etc/docker
+        state: directory
 
     - name: Enable container logging to Docker syslog file
       copy:
